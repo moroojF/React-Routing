@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { Router } from '@reach/router'
+import PageOne from './components/PageOne.jsx';
+import PageTwo from './components/PageTwo.jsx';
+import PageThree from './components/PageThree.jsx';
+// http://localhost:3000/Morooj/whitesmoke/rebeccapurple
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Router>
+        <PageOne path="/home" />
+        <PageTwo path="/:var" />
+        <PageThree path="/:word/:tColor/:bgColor" />
+      </Router>
     </div>
   );
 }
